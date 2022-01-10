@@ -35,7 +35,7 @@ public class whes1015 extends JavaPlugin implements Listener {
         JsonArray jsonArray = jsonElement.getAsJsonArray();
         JsonObject jsonObject = (JsonObject) jsonArray.get(0);
         saveDefaultConfig();
-        if (jsonObject.get("tag_name").toString() == vername) {
+        if (jsonObject.get("tag_name").toString() != vername) {
             if ((getConfig().getString("BetaVersion") == "true" && jsonObject.get("prerelease").getAsBoolean() == true) || (getConfig().getString("BetaVersion") == "false" && jsonObject.get("prerelease").getAsBoolean() == false)) {
                 this.getLogger().info("Please Update Your Plugin! "+vername);
                 this.getLogger().info( "DownloadLink: https://github.com/ExpTechTW/Spigot-Enginner/releases");
